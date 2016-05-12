@@ -1,75 +1,69 @@
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import rml.model.MUser;
-import rml.service.MUserServiceI;
-
-import com.alibaba.fastjson.JSON;
-
-@RunWith(SpringJUnit4ClassRunner.class) // = extends SpringJUnit4ClassRunner
-@ContextConfiguration(locations = { "classpath:spring.xml", "classpath:spring-mybatis.xml" })
 public class TestMybatis {
-
-	private static final Logger logger = Logger.getLogger(TestMybatis.class);
-
-	private MUserServiceI muserService;
-
-	public MUserServiceI getMuserService() {
-		return muserService;
-	}
-
-	@Autowired
-	public void setMuserService(MUserServiceI muserService) {
-		this.muserService = muserService;
-	}
+	
+	@BeforeClass  
+    public static void before() {  
+        System.out.println("@BeforeClass");  
+    }  
+  
+    @AfterClass  
+    public static void after() {  
+        System.out.println("@AfterClass");  
+    }  
+    
+    @Before  
+    public void setUp() throws Exception {  
+        System.out.println("在测试之前要做的准备工作。");  
+    }   
+    
+    @After  
+    public void tearDown() throws Exception {  
+        System.out.println("在测试之后");  
+    }  
 	
 	@Test
-	public void test1() {
-		
-		List<MUser> list = muserService.getAll();
-		logger.info(JSON.toJSONStringWithDateFormat(list, "yyyy-MM-dd HH:mm:ss"));
+	@Ignore
+    public void testIgnore(){
+    	Assert.assertEquals(3, 1); 
+    }
+	
+	@Test
+    public void testTrue(){
+    	Assert.assertEquals(1, 1); 
+    }
+
+	@Test(expected = Exception.class)  
+	public void testUserException(){
+		System.out.println(1/0);
 	}
 	
-	//@Test
-	public void test2() {
-	
-		MUser muser = new MUser();
-		muser.setId("0000");
-		muser.setName("aaaa");
-		muser.setAge(1234);
-		muser.setAddress("ABCD");
-		int i = muserService.insert(muser);
-		logger.info(JSON.toJSONStringWithDateFormat("add "+i, "yyyy-MM-dd HH:mm:ss"));
-	}
-	
-	//@Test
-	public void test3() {
-		
-		MUser muser = new MUser();
-		muser.setId("0000");
-		muser.setName("bbbb");
-		muser.setAge(1234);
-		muser.setAddress("ABCD");
-		int i = muserService.update(muser);
-		logger.info(JSON.toJSONStringWithDateFormat("update " +i, "yyyy-MM-dd HH:mm:ss"));
-	}
-	
-	//@Test
-	public void test4() {
-		
-		MUser muser = new MUser();
-		muser.setId("0000");
-		muser.setName("bbbb");
-		muser.setAge(1234);
-		muser.setAddress("ABCD");
-		int i = muserService.delete("0000");
-		logger.info(JSON.toJSONStringWithDateFormat("delete "+i, "yyyy-MM-dd HH:mm:ss"));
-	}
+	/**
+	 * Description: 测试标记   代表不进行测试
+	 * @param
+	 * @return void
+	 * @throws
+	 * @Author chengjiang
+	 * Create Date: 2016年4月21日 下午5:43:12
+	 */
+	@Test  
+    //@Ignore  
+    public void testFail() {  
+        Assert.assertEquals(3, 1);  
+    }  
 	
 }
