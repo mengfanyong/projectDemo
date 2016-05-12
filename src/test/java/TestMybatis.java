@@ -25,16 +25,6 @@ public class TestMybatis {
     public static void after() {  
         System.out.println("@AfterClass");  
     }  
-    
-    @Before  
-    public void setUp() throws Exception {  
-        System.out.println("在测试之前要做的准备工作。");  
-    }   
-    
-    @After  
-    public void tearDown() throws Exception {  
-        System.out.println("在测试之后");  
-    }  
 	
 	@Test
 	@Ignore
