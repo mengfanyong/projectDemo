@@ -124,6 +124,17 @@
           <testFailureIgnore>true</testFailureIgnore>
         </configuration>
       </plugin>
+	  <!-- checkstyle插件，使用自定义规则文件-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+			</plugin>
+			<!-- finbugs插件，jdk1.6编译的项目需添加 -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>2.5.5</version>
+			</plugin>
     </plugins>
     
     <finalName>zhibing_mybatis</finalName>
