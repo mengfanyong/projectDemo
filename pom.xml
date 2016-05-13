@@ -2,6 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>zhibing_mybatis</groupId>
   <artifactId>zhibing_mybatis</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>zhibing_mybatis</name>
   <description/>
