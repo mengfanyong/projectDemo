@@ -66,10 +66,10 @@ public class MUserController {
 	}
 
 	public int Add(int a, int b){
-		if (null == a or "".equals(a)){
+		if (null == a || "".equals(a)){
 			a = 0;
 		}
-		if (null == b or "".equals(b)){
+		if (null == b || "".equals(b)){
 			b = 0;
 		}
     	return a+b;
