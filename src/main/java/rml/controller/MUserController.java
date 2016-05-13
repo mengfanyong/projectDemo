@@ -64,20 +64,14 @@ public class MUserController {
 		muserService.update(muser);
 		return "redirect:/muserController/listUser.do";
 	}
-/**	
-	public void findbugsError(MUser muser){
-    	if (muser != null) { 
-        	Sting temp = "test";
-    	}  
-    	String name = muser.getName();
-		String temp1 = "string1";
-		String temp2 = "string2";
-		if (temp1 == temp2){
-			System.out.println("******");
-		}
-	}
-	**/
+
 	public int Add(int a, int b){
+		if (null == a or "".equals(a)){
+			a = 0;
+		}
+		if (null == b or "".equals(b)){
+			b = 0;
+		}
     	return a+b;
 	}
 }
