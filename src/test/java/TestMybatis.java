@@ -13,6 +13,7 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import rml.controller.MUserController;
 
 public class TestMybatis {
 	
@@ -24,6 +25,16 @@ public class TestMybatis {
     @AfterClass  
     public static void after() {  
         System.out.println("@AfterClass");  
+    }  
+    
+    @Before  
+    public void setUp() throws Exception {  
+        System.out.println("在测试之前要做的准备工作。");  
+    }   
+    
+    @After  
+    public void tearDown() throws Exception {  
+        System.out.println("在测试之后");  
     }  
 	
 	@Test
@@ -40,6 +51,11 @@ public class TestMybatis {
 	@Test(expected = Exception.class)  
 	public void testUserException(){
 		System.out.println(1/0);
+	}
+	
+	@Test 
+	public void testAdd(){
+		Assert.assertEquals(2, new MUserController().Add(1,1));
 	}
 	
 	/**

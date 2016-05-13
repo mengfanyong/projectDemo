@@ -36,8 +36,7 @@ public class MUserController {
 	}
 	
 	@RequestMapping(value="/addUser")
-	public String addUser(MUser muser) {
-			
+	public String addUser(MUser muser) {	
 		String id = UUID.randomUUID().toString();
 		muser.setId(id);
 		muserService.insert(muser);
@@ -64,5 +63,21 @@ public class MUserController {
 		
 		muserService.update(muser);
 		return "redirect:/muserController/listUser.do";
+	}
+/**	
+	public void findbugsError(MUser muser){
+    	if (muser != null) { 
+        	Sting temp = "test";
+    	}  
+    	String name = muser.getName();
+		String temp1 = "string1";
+		String temp2 = "string2";
+		if (temp1 == temp2){
+			System.out.println("******");
+		}
+	}
+	**/
+	public int Add(int a, int b){
+    	return a+b;
 	}
 }
