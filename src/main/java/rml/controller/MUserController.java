@@ -66,12 +66,8 @@ public class MUserController {
 	}
 
 	public int Add(int a, int b){
-		if (null == a || "".equals(a)){
-			a = 0;
-		}
-		if (null == b || "".equals(b)){
-			b = 0;
-		}
+		String test = "ceshi";
+        System.out.println("执行整数相加方法");
     	return a+b;
 	}
 }
