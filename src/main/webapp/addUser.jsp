@@ -14,19 +14,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<table>
 				<tr>
 					<td>name:</td>
-					<td><input type="text" name="name"></td>
+					<td><input type="text" name="name" id="name"></td>
 				</tr>
 				<tr>
 					<td>age:</td>
-					<td><input type="text" name="age"></td>
+					<td><input type="text" name="age" id="age"></td>
 				</tr>
 				<tr>
 					<td>address:</td>
-					<td><input type="text" name="address"></td>
+					<td><input type="text" name="address" id="address"></td>
 				</tr>
 				<tr>
 					<td>
-						<input type="submit" value="Save">
+						<input type="submit" value="Save" id="save">
 					</td>
 					<td>
 						<input type="reset" value="Reset">
